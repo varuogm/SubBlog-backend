@@ -6,7 +6,7 @@ import subsRoutes from "./routes/subs";
 import articlesRoutes from "./routes/articles";
 
 import mongoose from "mongoose";
-
+const PORT = process.env.PORT ||  8000;
 import cors from "cors";
 mongoose
   .connect( process.env.MONGOURI as string)
@@ -24,8 +24,8 @@ mongoose
 
 
 
-    app.listen(8000, () => {
-      console.log(`nowd lisiteing to port 8000 `);
+    app.listen(PORT, () => {
+      console.log(`nowd lisiteing to port ${PORT} `);
     });
 
   })
